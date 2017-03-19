@@ -1,0 +1,41 @@
+
+body{
+  font-size: 1.5em;
+  line-height: 1.6;
+  margin-top: 13em;
+}
+
+.center {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.col-center {
+   float: none;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+#search-input{
+  width:90%;
+  margin-bottom: 1em; 
+}
+
+#search-results {
+  -moz-column-width: 13em;
+  -webkit-column-width: 13em;
+  column-width: 13em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+  column-gap: 1em;
+}
+#search-results .flickr-image {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 1rem;
+  width: 100%;
+  background: #efefef;
+}
+
+
+

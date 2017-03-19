@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Image Search</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div id="main-container" class="container">
+    
+    <div class="row">
+      <h1 class="center">Image Search</h1>
+    </div>
+      
+    <div class="row">
+      <div class="col-md-offset-2 col-sm-10">
+        <input type="text" class="form-control" v-model="query" debounce="500" placeholder="Enter your search tag" id="search-input"/> 
+      </div>
+      <div class="text-center">
+        <button v-on:click="callapi" class="btn btn-default">Search Image</button>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div v-if="(images.length < 1 && query.length != 0)"><p class="center">No match</p></div>
+      <div id="search-results">
+          <div class="flickr-image" v-for="image in images"> <!-- image rendering -->
+            <div class="thumbnail">
+              <a :href="image.link" target="_blank">
+                <img src="https://media.giphy.com/media/xUPGcK8oba6GVIn7uU/giphy.gif" style="width: 100%;" v-img="image.media.m">  <!-- insert photo with small size -->
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource.min.js'></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
