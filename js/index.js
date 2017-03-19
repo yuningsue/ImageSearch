@@ -1,9 +1,9 @@
-/* VUE.JS logic */
 var vm = new Vue({
   el: '#main-container',
   data: {
     images: [],
     query: '',
+    sent: false
   },
   methods: {    /* callFlickrPublic API */
     callapi: function (query) {
@@ -15,7 +15,8 @@ var vm = new Vue({
         }
       };
 
-      this.$http.jsonp(reqURL, options);
+      this.$http.jsonp(reqURL, options); /* sent http requet to flickr public api */  
+      this.sent = true;
     }
 
   }
@@ -31,19 +32,19 @@ function jsonFlickrFeed(response) {
 Vue.directive('img', {
   inserted: function (el, binding) {
     lazyload(el, binding);
-  },   /* inserted: called when the bound element has been inserted into its parent node */
+  },   /* inserted: called when bounded element has been inserted */
   update: function (el, binding) {
-    lazyload(el, binding); /*update: called after the containing component has updated, but possibly before its children have updated. */
+    lazyload(el, binding); /* update: called after images changed */
   }
 });
 
 
-/* image preloading to improve efficiency */
+/* image preloading to improve user experience */
 function lazyload(el, binding) {
   var img = new Image();   
-  img.src = binding.value; 
+  img.src = binding.value;  /* update image source url */
 
   img.onload = function() {
-    el.src = binding.value;   /* insert images into main container */
+    el.src = binding.value;   /* show photo after complete download */
   };
 }

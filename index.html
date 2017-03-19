@@ -30,12 +30,12 @@
     </div>
     
     <div class="row">
-      <div v-if="(images.length < 1 && query.length != 0)"><p class="center">No match</p></div>
+      <div v-if="(images.length == 0 && sent==true)"><p class="center">No match</p></div>
       <div id="search-results">
-          <div class="flickr-image" v-for="image in images"> <!-- image rendering -->
+          <div v-for="image in images"> <!-- image rendering -->
             <div class="thumbnail">
               <a :href="image.link" target="_blank">
-                <img src="https://media.giphy.com/media/xUPGcK8oba6GVIn7uU/giphy.gif" style="width: 100%;" v-img="image.media.m">  <!-- insert photo with small size -->
+                <img src="https://media.giphy.com/media/xUPGcK8oba6GVIn7uU/giphy.gif" style="width: 100%;" v-img="image.media.m">  <!-- insert photo in small size -->
               </a>
             </div>
           </div>

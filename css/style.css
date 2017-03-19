@@ -22,6 +22,7 @@ body{
 }
 
 #search-results {
+  margin-top: 1em;
   -moz-column-width: 13em;
   -webkit-column-width: 13em;
   column-width: 13em;
