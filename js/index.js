@@ -2,8 +2,7 @@ var vm = new Vue({
   el: '#main-container',
   data: {
     images: [],
-    query: '',
-    sent: false
+    query: ''
   },
   methods: {    /* callFlickrPublic API */
     callapi: function (query) {
@@ -16,7 +15,6 @@ var vm = new Vue({
       };
 
       this.$http.jsonp(reqURL, options); /* sent http requet to flickr public api */  
-      this.sent = true;
     }
 
   }
@@ -24,7 +22,12 @@ var vm = new Vue({
 
 /* the flickr default wrapped callback function */
 function jsonFlickrFeed(response) {
-  vm.$data.images = response.items;
+  if(response.items.length > 0){
+    vm.$data.images = response.items;
+  }
+  else{
+    vm.$data.images = null;
+  }
 }
 
 
