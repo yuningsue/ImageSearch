@@ -30,7 +30,7 @@
     </div>
     
     <div class="row">
-      <div v-if="(images.length == 0 && sent==true)"><p class="center">No match</p></div>
+      <div v-show="images==null"><p class="center">Can't find match photo.</p></div>
       <div id="search-results">
           <div v-for="image in images"> <!-- image rendering -->
             <div class="thumbnail">
