@@ -16,9 +16,17 @@ var vm = new Vue({
 
       this.$http.jsonp(reqURL, options); /* sent http requet to flickr public api */  
     }
-
+  },
+  watch:{
+    images: function (newVal, oldVal) {
+    this.$nextTick(function () {
+      //now, DOM will have been updated.
+    })  
+    }
   }
+
 });
+
 
 /* the flickr default wrapped callback function */
 function jsonFlickrFeed(response) {
