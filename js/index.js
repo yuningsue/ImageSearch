@@ -32,12 +32,16 @@ var vm = new Vue({
 function jsonFlickrFeed(response) {
   if(response.items.length > 0){
     vm.$data.images = response.items;
+<<<<<<< HEAD
     animation();
 
+=======
+>>>>>>> 8980352c3ee66b01b4d1c4099c6cbb4c457979f4
   }
   else{
     vm.$data.images = null;
   }
+<<<<<<< HEAD
 }
 
 function animation() {
@@ -57,6 +61,8 @@ function animation() {
     
   });                
 };
+=======
+>>>>>>> 8980352c3ee66b01b4d1c4099c6cbb4c457979f4
 }
 
 
