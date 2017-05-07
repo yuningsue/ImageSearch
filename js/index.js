@@ -2,8 +2,7 @@ var vm = new Vue({
   el: '#main-container',
   data: {
     images: [],
-    query: '',
-    sent: false
+    query: ''
   },
   methods: {    /* callFlickrPublic API */
     callapi: function (query) {
@@ -16,15 +15,48 @@ var vm = new Vue({
       };
 
       this.$http.jsonp(reqURL, options); /* sent http requet to flickr public api */  
-      this.sent = true;
     }
-
+  },
+  watch:{
+    images: function (newVal, oldVal) {
+    this.$nextTick(function () {
+      //now, DOM will have been updated.
+    })  
+    }
   }
+
 });
+
 
 /* the flickr default wrapped callback function */
 function jsonFlickrFeed(response) {
-  vm.$data.images = response.items;
+  if(response.items.length > 0){
+    vm.$data.images = response.items;
+    animation();
+
+  }
+  else{
+    vm.$data.images = null;
+  }
+}
+
+function animation() {
+  var animateSearchBox = function() {
+  
+  var sceneContainer = $('.main-container');
+  var sceneDimensionsAfterAnimation = '100px';
+  
+  TweenMax.to(sceneContainer, 1, {
+    height: sceneDimensionsAfterAnimation,
+    ease: ITEManimate.bezier(0.930, 0.035, 0.350, 0.815),
+    minHeight: sceneDimensionsAfterAnimation,
+    ease: ITEManimate.bezier(0.930, 0.035, 0.350, 0.815),
+    onComplete: function() {
+      $('body').css('overflow-y', 'scroll');
+    }
+    
+  });                
+};
 }
 
 

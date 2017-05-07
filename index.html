@@ -17,7 +17,7 @@
   <div id="main-container" class="container">
     
     <div class="row">
-      <h1 class="center">Image Search</h1>
+      <h1 class="center">Be inspired!</h1>
     </div>
       
     <div class="row">
@@ -30,7 +30,7 @@
     </div>
     
     <div class="row">
-      <div v-if="(images.length == 0 && sent==true)"><p class="center">No match</p></div>
+      <div v-show="images==null"><p class="center">Can't find match photo.</p></div>
       <div id="search-results">
           <div v-for="image in images"> <!-- image rendering -->
             <div class="thumbnail">
