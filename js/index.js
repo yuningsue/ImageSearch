@@ -32,39 +32,13 @@ var vm = new Vue({
 function jsonFlickrFeed(response) {
   if(response.items.length > 0){
     vm.$data.images = response.items;
-<<<<<<< HEAD
-    animation();
 
-=======
->>>>>>> 8980352c3ee66b01b4d1c4099c6cbb4c457979f4
   }
   else{
     vm.$data.images = null;
   }
-<<<<<<< HEAD
-}
 
-function animation() {
-  var animateSearchBox = function() {
-  
-  var sceneContainer = $('.main-container');
-  var sceneDimensionsAfterAnimation = '100px';
-  
-  TweenMax.to(sceneContainer, 1, {
-    height: sceneDimensionsAfterAnimation,
-    ease: ITEManimate.bezier(0.930, 0.035, 0.350, 0.815),
-    minHeight: sceneDimensionsAfterAnimation,
-    ease: ITEManimate.bezier(0.930, 0.035, 0.350, 0.815),
-    onComplete: function() {
-      $('body').css('overflow-y', 'scroll');
-    }
-    
-  });                
-};
-=======
->>>>>>> 8980352c3ee66b01b4d1c4099c6cbb4c457979f4
 }
-
 
 /* add a custom directive called v-img */
 Vue.directive('img', {
@@ -86,3 +60,4 @@ function lazyload(el, binding) {
     el.src = binding.value;   /* show photo after complete download */
   };
 }
+
