@@ -61,3 +61,7 @@ function lazyload(el, binding) {
   };
 }
 
+$("input").keypress(function(){
+    $("header").toggleClass("top");
+    $("text-center").removeClass("display");
+});

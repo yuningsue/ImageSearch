@@ -15,15 +15,18 @@
 
 <body>
   <div id="main-container">
-    
+  
+  <div class="header">  
     <div class="row">
       <h1 class="center">Be inspired!</h1>
     </div>
       
-    <div class="container">
+    <div class="search-container">
     <div class="search-box list-unstyled">
       <input type="text" v-on:keyup.enter="callapi"/>
-      <span></span>
+      <span></span><span class="text-center" v-show="images.length>1">
+        <button v-on:click="callapi"  id="submit">Try again</button>
+      </span>
     </div>
     </div>
 <!--      <div class="col-md-offset-2 col-sm-10">
@@ -32,7 +35,7 @@
     <div class="text-center">
         <button v-on:click="callapi" class="btn btn-default" id="submit">Search Image</button>
       </div> -->
-
+  </div>
     
     <div class="row">
       <div v-show="images==null"><p class="center">Can't find match photo.</p></div>

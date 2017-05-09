@@ -8,6 +8,11 @@ body *, html * {
   box-sizing: border-box;
 }
 
+h1{
+  color: #fff;
+}
+
+
 .center {
   text-align: center;
   margin-top: 1em;
@@ -19,9 +24,14 @@ body *, html * {
    margin-left: auto;
 }
 
+.display{
+  display: none;
+}
 
 #search-results {
-  margin-top: 1em;
+  margin-top: 5.5em;
+  margin-left: 2em;
+  margin-right: 3em;
   -moz-column-width: 13em;
   -webkit-column-width: 13em;
   column-width: 13em;
@@ -29,19 +39,19 @@ body *, html * {
   -webkit-column-gap: 1em;
   column-gap: 1em;
 }
+
 #search-results .flickr-image {
   display: inline-block;
   margin: 0.25rem;
   padding: 1rem;
   width: 100%;
-  background: #efefef;
 }
 
 
-.container {
+.search-container {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   transform: translate(-50%);
 }
 
@@ -53,11 +63,11 @@ body *, html * {
   border: none;
   background: none;
   z-index: 1;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   transition: all .25s ease-in .25s;
   color: transparent;
-  font-size: .75rem;
+  font-size: 1rem;
   line-height: 25px;
 }
 
@@ -109,3 +119,12 @@ body *, html * {
   transform: rotate(45deg) translate(26px, -2px);
 }
 
+button{
+  border-radius: 25px;
+  background: #e03a29;
+  border: 2px solid white;
+}
+
+.animate{
+  top:0;
+}
