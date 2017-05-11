@@ -1,6 +1,6 @@
 
 body{
-  margin-top: 10em;
+  margin-top: 3em;
   background: #e03a29;
 }
 
@@ -10,6 +10,10 @@ body *, html * {
 
 h1{
   color: #fff;
+}
+
+header{
+  top :5%;
 }
 
 
@@ -29,6 +33,7 @@ h1{
 }
 
 #search-results {
+  position: relative;
   margin-top: 5.5em;
   margin-left: 2em;
   margin-right: 3em;
@@ -40,18 +45,12 @@ h1{
   column-gap: 1em;
 }
 
-#search-results .flickr-image {
-  display: inline-block;
-  margin: 0.25rem;
-  padding: 1rem;
-  width: 100%;
-}
-
 
 .search-container {
   position: absolute;
+  line-height: 1;
   left: 50%;
-  top: 40%;
+  top: 23%;
   transform: translate(-50%);
 }
 
@@ -67,7 +66,7 @@ h1{
   height: 30px;
   transition: all .25s ease-in .25s;
   color: transparent;
-  font-size: 1rem;
+  font-size: 12px;
   line-height: 25px;
 }
 
@@ -120,9 +119,26 @@ h1{
 }
 
 button{
+  height: 25px;
   border-radius: 25px;
-  background: #e03a29;
+  background: black;
   border: 2px solid white;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  color: #ffffff;
+  font-size: 12px;
+  background: #000000;
+  padding: 7px 20px 11px 20px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #e00038;
+  text-decoration: none;
+}
+
+.thumbnail{
+  display: inline-block;
 }
 
 .animate{
